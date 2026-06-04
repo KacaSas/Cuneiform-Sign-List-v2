@@ -5,7 +5,7 @@ This app allows searching cuneiform signs by their name or value, number in nota
 
 
 ## Sources
-The cuneiform fonts used are available thanks to the efforts of S. Vanséveren, S. Tinney, C. R. Ziegeler, R. Leroy, and others. Individual cuneiform signs are mapped according to my [Cuneiform Sign List] (http://home.zcu.cz/~ksaskova/Sign_List.html); the mapping of Proto-Cuneiform signs follows the [Proto-Cuneiform Sign List] (https://oracc.museum.upenn.edu/pcsl/). Sumerian and Akkadian glossaries are taken from [ePSD2: The Pennsylvania Sumerian Dictionary Project] (https://oracc.museum.upenn.edu/epsd2/) and [TSAE: Textual Sources of the Assyrian Empire] (https://oracc.museum.upenn.edu/tsae/).
+The cuneiform fonts used are available thanks to the efforts of S. Vanséveren, S. Tinney, C. R. Ziegeler, R. Leroy, and others. Individual cuneiform signs are mapped according to my [Cuneiform Sign List](http://home.zcu.cz/~ksaskova/Sign_List.html); the mapping of Proto-Cuneiform signs follows the [Proto-Cuneiform Sign List] (https://oracc.museum.upenn.edu/pcsl/). Sumerian and Akkadian glossaries are taken from [ePSD2: The Pennsylvania Sumerian Dictionary Project](https://oracc.museum.upenn.edu/epsd2/) and [TSAE: Textual Sources of the Assyrian Empire](https://oracc.museum.upenn.edu/tsae/).
 ### Fonts
 * *PCSL.ttf* (by A. Pandey and S. Tinney). https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.
 * *Oracc-LAK.ttf* (by S. Tinney and V. Kethana). https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.

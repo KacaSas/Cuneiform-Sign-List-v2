@@ -534,28 +534,8 @@ with st.container(border=True):
 							el.textContent = '';
 						}}
 					}}
-					function resizeIframe() {{
-						try {{
-							const newHeight = document.body.offsetHeight + 20;
-							
-							const iframes = window.parent.document.querySelectorAll('iframe');
-							for (const iframe of iframes) {{
-								if (iframe.contentWindow === window) {{
-									iframe.style.height = newHeight + 'px';
-									break;
-								}}
-							}}
-						}} catch (e) {{
-							console.log('Autoresize failed due to cross-origin restriction:', e);
-						}}
-					}}
-
-					window.addEventListener('load', resizeIframe);
-					setTimeout(resizeIframe, 150);
-					setTimeout(resizeIframe, 500);
 					</script>
 					"""
-					#st.components.v1.html(htmlCode, height=1090, scrolling=True)
 					st.iframe(htmlCode, height="content")
 
 					st.markdown("<hr style='margin: 0.2em 0; border: none; border-top: 3px solid #444;'>", unsafe_allow_html=True)

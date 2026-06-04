@@ -247,7 +247,7 @@ def sumerianGlossary():
 	with colum1:
 		meanSumerian = st.text_input('Sumerian', key='meanSumerian')
 	with colum2:
-		meanBaseForm = st.text_input('Signs', key='meanBaseForm')
+		meanBaseForm = st.text_input('Signs / Written form', key='meanBaseForm')
 	with colum3:
 		meanAkkadian = st.text_input('Akkadian', key='meanAkkadian')
 	with colum4:
@@ -339,7 +339,7 @@ def akkadianGlossary():
 	with column1:
 		akkAkkadian = st.text_input('Akkadian', key='akkAkkadian')
 	with column2:
-		akkWrittenForm = st.text_input('Written form', key='akkWrittenForm')
+		akkWrittenForm = st.text_input('Signs / Written form', key='akkWrittenForm')
 	with column3:
 		akkEnglish = st.text_input('English', key='akkEnglish')
 

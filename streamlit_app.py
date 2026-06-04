@@ -73,6 +73,10 @@ with co2:
 data = pd.read_csv('resources/signList/SignList.csv', keep_default_na=False, na_values=[])
 
 if searchSign != '':
+	searchSignOrigin = searchSign  # keep original search term
+	replacementsSearchSign = {'Sh': 'Š', 'sh': 'š', 'kh': 'ḫ', 'H': 'Ḫ', 'h': 'ḫ', r',s': r'\,s', r'\,s': r'ṣ', r',S': r'\,S', r'\,S': r'Ṣ', r',t': r'\,t', r'\,t': r'ṭ', r',T': r'\,T', r'\,T': r'Ṭ', r'.': r'\.'}
+	for old, new in replacementsSearchSign.items():
+		searchSign = searchSign.replace(old, new)
 	searchSign = searchSign.replace('+', '\\+')
 	if onlyWholeWordSearch:
 		searchSign = r'\b' + searchSign + r'\b'
@@ -80,7 +84,8 @@ if searchSign != '':
 	foundSign2 = data.loc[data['Values'].str.contains(searchSign, case=False, regex=True)]
 	foundSign3 = data.loc[data['Sign'].str.contains(searchSign, case=False, regex=True)]
 	foundSign4 = data.loc[data['Values3'].str.contains(searchSign, case=False, regex=True)]
-	foundSign = pd.concat([foundSign1, foundSign2, foundSign3, foundSign4], axis=0, join='outer', ignore_index=False, keys=None)
+	foundSign5 = data.loc[data['Values2'].str.contains(searchSign, case=False, regex=True)]
+	foundSign = pd.concat([foundSign1, foundSign2, foundSign3, foundSign4, foundSign5], axis=0, join='outer', ignore_index=False, keys=None)
 	foundSign = foundSign.drop_duplicates(inplace=False)
 else:
 	foundSign = data
@@ -553,8 +558,18 @@ with st.container(border=True):
 
 				protoCunData = pd.read_csv('resources/signList/Proto-Cuneiform.csv', keep_default_na=False, na_values=[])
 
-				foundProtoCunDataSignName = protoCunData.loc[protoCunData['Name2'].str.contains('^' + str(row['Name']) + '$', case=False, regex=True)]
-				foundProtoCunDataSearchTerm = protoCunData.loc[protoCunData['Name1'].str.contains('^' + searchSign, case=False, regex=True)]
+				searchSignProto = searchSign
+
+				replacementsProto = {'₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9', '₀': '0', 'Ḫ': 'H', 'ḫ': 'h'}
+
+				selectedSign = str(row['Name'])
+				for x,y in replacementsProto.items():
+					selectedSign = selectedSign.replace(x, y)
+				foundProtoCunDataSignName = protoCunData.loc[protoCunData['Name2'].str.contains('^' + selectedSign + '|\|' + selectedSign, case=False, regex=True)]  # by selected sign
+
+				for x,y in replacementsProto.items():
+					searchSignProto = searchSignProto.replace(x, y)
+				foundProtoCunDataSearchTerm = protoCunData.loc[protoCunData['Name1'].str.contains('^' + searchSignProto + '|\|' + searchSignProto, case=False, regex=True)]  # by search string
 
 				clu1, clu2 = st.columns([19, 15], gap='small')
 				cl1, cl2, cl3, cl4, cl5 = st.columns([5, 10, 4, 5, 10], gap='small')
@@ -562,7 +577,7 @@ with st.container(border=True):
 				if len(foundProtoCunDataSignName) != 0:
 					n = 0
 					with clu1:
-						st.write('<br><b><i><font style="font-size: 1.2em">By selected sign:</i> <font style="color: #ffffab;">', str(row['Name']), '</font></b>', unsafe_allow_html=True)
+						st.write('<br><b><i><font style="font-size: 1.2em">By selected sign name:</i> <font style="color: #ffffab;">', str(row['Name']), '</font></b>', unsafe_allow_html=True)
 					for entry in range(len(foundProtoCunDataSignName)):
 						with cl1:
 							st.write('<b><font style="font-family: PCSL; font-size: 3.5em; color: #ffffab;">', foundProtoCunDataSignName['Sign'].iloc[n], '</font></b>', unsafe_allow_html=True)
@@ -573,7 +588,7 @@ with st.container(border=True):
 				if len(foundProtoCunDataSearchTerm) != 0 and str(searchSign) != '':
 					m = 0
 					with clu2:
-						st.write('<br><b><i><font style="font-size: 1.2em">By search string:</i> <font style="color: #ffffab;">', searchSign, '</font></b>', unsafe_allow_html=True)
+						st.write('<br><b><i><font style="font-size: 1.2em">By search string:</i> <font style="color: #ffffab;">', searchSignOrigin, '</font></b>', unsafe_allow_html=True)
 					for entry in range(len(foundProtoCunDataSearchTerm)):
 						with cl4:
 							st.write('<b><font style="font-family: PCSL; font-size: 3.5em; color: #ffffab;">', foundProtoCunDataSearchTerm['Sign'].iloc[m], '</font></b>', unsafe_allow_html=True)

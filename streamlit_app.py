@@ -534,22 +534,25 @@ with st.container(border=True):
 							el.textContent = '';
 						}}
 					}}
-					// =========================================================
-					// PŘIDÁNO PRO AUTORESIZE: Přizpůsobení výšky podle obsahu
-					// =========================================================
-					window.addEventListener('load', () => {{
-						window.parent.postMessage({{
-							type: 'streamlit:setComponentValue',
-							value: document.body.scrollHeight
-						}}, '*');
-					}});
-					
-					setTimeout(() => {{
-						window.parent.postMessage({{
-							type: 'streamlit:setComponentValue',
-							value: document.body.scrollHeight
-						}}, '*');
-					}}, 100);
+					function resizeIframe() {{
+						try {{
+							const newHeight = document.body.offsetHeight + 20;
+							
+							const iframes = window.parent.document.querySelectorAll('iframe');
+							for (const iframe of iframes) {{
+								if (iframe.contentWindow === window) {{
+									iframe.style.height = newHeight + 'px';
+									break;
+								}}
+							}}
+						}} catch (e) {{
+							console.log('Autoresize failed due to cross-origin restriction:', e);
+						}}
+					}}
+
+					window.addEventListener('load', resizeIframe);
+					setTimeout(resizeIframe, 150);
+					setTimeout(resizeIframe, 500);
 					</script>
 					"""
 					st.components.v1.html(htmlCode, height=1090, scrolling=False)

@@ -555,7 +555,7 @@ with st.container(border=True):
 					setTimeout(resizeIframe, 500);
 					</script>
 					"""
-					st.components.v1.html(htmlCode, height=1090, scrolling=False)
+					st.components.v1.html(htmlCode, height=1090, scrolling=True)
 
 					st.markdown("<hr style='margin: 0.2em 0; border: none; border-top: 3px solid #444;'>", unsafe_allow_html=True)
 					st.markdown('<br>', unsafe_allow_html=True)

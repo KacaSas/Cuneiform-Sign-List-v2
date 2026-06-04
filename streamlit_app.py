@@ -78,9 +78,10 @@ if searchSign != '':
 	for old, new in replacementsSearchSign.items():
 		searchSign = searchSign.replace(old, new)
 	searchSign = searchSign.replace('+', '\\+')
+	searchSignWithoutRegExp = searchSign
 	if onlyWholeWordSearch:
-		searchSign = r'\b' + searchSign + r'\b'
-	st.write(searchSign)
+		searchSign = r'(?<!\w)' + searchSign + r'(?!\w)'
+
 	foundSign1 = data.loc[data['Name'].str.contains(searchSign, case=False, regex=True)]
 	foundSign2 = data.loc[data['Values'].str.contains(searchSign, case=False, regex=True)]
 	foundSign3 = data.loc[data['Sign'].str.contains(searchSign, case=False, regex=True)]
@@ -554,12 +555,9 @@ with st.container(border=True):
 			with c2:
 				st.subheader('Proto-cuneiform')
 
-				if onlyWholeWordSearch:
-					searchSign = searchSign.replace(r'\b', '')
-
 				protoCunData = pd.read_csv('resources/signList/Proto-Cuneiform.csv', keep_default_na=False, na_values=[])
 
-				searchSignProto = searchSign
+				searchSignProto = searchSignWithoutRegExp
 
 				replacementsProto = {'₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9', '₀': '0', 'Ḫ': 'H', 'ḫ': 'h'}
 

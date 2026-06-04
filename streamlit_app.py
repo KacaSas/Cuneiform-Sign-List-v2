@@ -215,7 +215,8 @@ gb.configure_column('ValuesForCuenify', hide=True)
 gb.configure_grid_options(rowHeight=37)  # set row height
 gridOptions = gb.build()
 
-with st.container(border=True):
+with st.expander(label='', expanded=True):
+#with st.container(border=True):
 	st.write('Found items count: ', foundData['Sign'].count())
 	grid_response = AgGrid(
 		foundData,
@@ -445,7 +446,8 @@ def splitCuneiformText(text):  # splits the text in a table containing both Lati
 			result.append(f'<span class="cuneiform-part">{part}</span>')
 	return ''.join(result)
 
-with st.container(border=True):
+with st.expander(label='', expanded=True):
+#with st.container(border=True):
 	if len(df1.columns) != 0:
 		tabu1, tabu2 = st.tabs(['Sign details', 'Sumerian and Akkadian glossaries'])
 		with tabu1:

@@ -1,10 +1,11 @@
 import csv
 import pandas as pd
 import re
-import streamlit as st  # pip install streamlit==1.53.0
-from st_aggrid import GridOptionsBuilder, AgGrid, JsCode # pip install streamlit-aggrid==1.0.5
+import streamlit as st
+from st_aggrid import GridOptionsBuilder, AgGrid, JsCode
 import streamlit.components.v1 as components
-import base64  # to load cuneiform fonts
+import base64  # load cuneiform fonts
+import unicodedata  # custom alphabetical sort
 import warnings
 
 #from PIL import Image, ImageOps
@@ -46,6 +47,28 @@ def clearSignListForm():
 	st.session_state['searchABZ'] = ''
 	st.session_state['searchCodepoint'] = ''
 
+def customAlphabetSort(sortedDF, sortedColumn):
+	customAlphabet = list(' .–-0₀1₁2₂3₃4₄5₅6₆7₇8₈9₉ʾ’ʿ‘`AaĀāÂâÁáÀàÄäBbCcÇçDdḌḍḎḏEeĒēÉéÊêÈèËëFfGgĞğǦǧHhḪḫḤḥIiĪīÎîÍíÌìİıÏïJjKkLlMmNnOoŌōÔôÓóÖöPpQqRrŘřSsṢṣŞşŠšTtṬṭŢţṮṯUuŪūÛûÚúÙùÜüVvWwXxYyZz!"#$%_()*+,/:;<=>?@[]^&{|}~')
+	lowercaseAlphabet = [char.lower() for char in customAlphabet]
+	charOrder = {char: i for i, char in enumerate(lowercaseAlphabet)}
+	baseVowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+	def normalizeText(text):
+		normalized = []
+		for char in str(text):
+			lowerChar = char.lower()
+			decomposed = unicodedata.normalize('NFKD', lowerChar)
+			baseChar = decomposed[0] if len(decomposed) > 0 else lowerChar
+			if baseChar in baseVowels:
+				normalized.append(baseChar)
+			else:
+				normalized.append(lowerChar)
+		return ''.join(normalized)
+	def sortKey(word):
+		normalized = normalizeText(word)
+		return [charOrder.get(char, len(customAlphabet)) for char in normalized]
+	sortedDF = sortedDF.sort_values(by=sortedColumn, key=lambda x: x.map(sortKey))
+	return sortedDF
+
 st.write('<b><font style="font-size: 36px">Cuneiform signs search</font></b><br>(case insensitive, regular expressions allowed)', unsafe_allow_html=True)
 st.write('<font style="font-size: 1.1em; color: #2e9aff">Cuneiform fonts used in this app are available thanks to the efforts of S. Vanséveren, S. Tinney, C. R. Ziegeler, R. Leroy, and others. Individual cuneiform signs are mapped according to my <a href="http://home.zcu.cz/~ksaskova/Sign_List.html" target="_blank"><i>Cuneiform Sign List</i></a>; the mapping of Proto-Cuneiform signs follows the <a href="https://oracc.museum.upenn.edu/pcsl/" target="_blank"><i>Proto-Cuneiform Sign List</i></a>. Sumerian and Akkadian glossaries are taken from <a href="https://oracc.museum.upenn.edu/epsd2/" target="_blank"><i>ePSD2: The Pennsylvania Sumerian Dictionary Project</i></a> and <a href="https://oracc.museum.upenn.edu/tsae/" target="_blank"><i>TSAE: Textual Sources of the Assyrian Empire</i></a>. For details, see <i>Sources and references</i> below.</font>', unsafe_allow_html=True)
 
@@ -64,7 +87,7 @@ with colu4:
 with colu5:
 	searchCodepoint = st.text_input('Unicode codepoint:', key='searchCodepoint', label_visibility='visible')
 	
-co1, co2 = st.columns([5, 1])
+co1, co2 = st.columns([5.015, 0.985])
 with co1:
 	onlyWholeWordSearch = st.checkbox('Search whole string only (name/value)', key='onlyWholeWordSearch', value=False)
 with co2:
@@ -130,7 +153,7 @@ else:
 	foundCodepoint = foundShape
 
 ######################################## SHOW SEARCH RESULT ########################################
-foundData = foundCodepoint
+foundData = customAlphabetSort(foundCodepoint, 'Name')
 
 cellsytle_jscode = JsCode(
 	"""
@@ -192,7 +215,6 @@ gb.configure_column('ValuesForCuenify', hide=True)
 gb.configure_grid_options(rowHeight=37)  # set row height
 gridOptions = gb.build()
 
-#with st.expander('List of found items', expanded=True):
 with st.container(border=True):
 	st.write('Found items count: ', foundData['Sign'].count())
 	grid_response = AgGrid(
@@ -230,22 +252,6 @@ def clearSumerianForm():
 def clearAkkadianForm():
 	for Ak in ['akkAkkadian', 'akkEnglish', 'akkWrittenForm']:
 		st.session_state[Ak] = ''
-
-def splitCuneiformText(text):  # splits the text in a table containing both Latin and cuneiform characters for correction of the size in Sign details view
-	if not text:
-		return text
-	if not re.search(r'[a-zA-Z]', text):
-		return f'<span class="cuneiform-part">{text}</span>'
-	parts = re.split(r'([a-zA-Z\s\/\-\.\,\(\)]+)', text)
-	result = []
-	for part in parts:
-		if not part:
-			continue
-		if re.search(r'[a-zA-Z]', part):
-			result.append(f'<span class="latin-part">{part}</span>')
-		else:
-			result.append(f'<span class="cuneiform-part">{part}</span>')
-	return ''.join(result)
 
 def sumerianGlossary():
 	st.write('<b><font style="font-size: 1.7em; line-height: 2.9em;">Sumerian glossary</font> <font style="font-size: 1.3em; color: #969799;">(from ePSD2)</b></font>', unsafe_allow_html=True)
@@ -422,8 +428,23 @@ def akkadianGlossary():
 	st.markdown("<hr style='margin: 0.2em 0; border: none; border-top: 3px solid #444;'>", unsafe_allow_html=True)
 	st.write('<br><font style="color: #969799;">Source file <b><i>gloss-akk.json</i></b> (part of <b><i>tsae.zip</i></b>). <a href="https://oracc.museum.upenn.edu/tsae/" target="_blank">TSAE: Textual Sources of the Assyrian Empire</a>. Available at https://oracc.museum.upenn.edu/json/tsae.zip.</font>', unsafe_allow_html=True)
 
-######################################## SHOW SELECTED SIGN DETAILS ########################################
-#with st.expander('', expanded=True):
+######################################## SELECTED SIGN DETAILS AND PROTO-CUNEIFORM TAB ########################################
+def splitCuneiformText(text):  # splits the text in a table containing both Latin and cuneiform characters for correction of the size in Sign details view
+	if not text:
+		return text
+	if not re.search(r'[a-zA-Z]', text):
+		return f'<span class="cuneiform-part">{text}</span>'
+	parts = re.split(r'([a-zA-Z\s\/\-\.\,\(\)]+)', text)
+	result = []
+	for part in parts:
+		if not part:
+			continue
+		if re.search(r'[a-zA-Z]', part):
+			result.append(f'<span class="latin-part">{part}</span>')
+		else:
+			result.append(f'<span class="cuneiform-part">{part}</span>')
+	return ''.join(result)
+
 with st.container(border=True):
 	if len(df1.columns) != 0:
 		tabu1, tabu2 = st.tabs(['Sign details', 'Sumerian and Akkadian glossaries'])
@@ -562,6 +583,7 @@ with st.container(border=True):
 				replacementsProto = {'Ḫ': 'H', 'ḫ': 'h'}
 
 				selectedSign = str(row['Name'])
+
 				for x,y in replacementsProto.items():
 					selectedSign = selectedSign.replace(x, y)
 
@@ -599,7 +621,7 @@ with st.container(border=True):
 				if len(foundProtoCunDataSearchTerm) == 0 and len(foundProtoCunDataSignName) == 0:					
 					st.write('<font style="color: #FF4B4B; font-size: 16px"><b>Nothing found!</b></font>', unsafe_allow_html=True)
 
-######################################## SUMERIAN AND AKKADIAN GLOSSARY ########################################
+######################################## SUMERIAN AND AKKADIAN GLOSSARY TAB ########################################
 		with tabu2:
 			co1, co2 = st.columns([7, 7], gap='small', border=True)
 			with co1:

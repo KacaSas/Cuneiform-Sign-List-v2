@@ -339,9 +339,9 @@ def akkadianGlossary():
 	with column1:
 		akkAkkadian = st.text_input('Akkadian', key='akkAkkadian')
 	with column2:
-		akkEnglish = st.text_input('English', key='akkEnglish')
-	with column3:
 		akkWrittenForm = st.text_input('Written form', key='akkWrittenForm')
+	with column3:
+		akkEnglish = st.text_input('English', key='akkEnglish')
 
 	columa1, columa2, columa3 = st.columns([2.7, 7.3, 5], gap='small')
 	with columa1:
@@ -398,9 +398,9 @@ def akkadianGlossary():
 					with c1:
 						st.write(f'<b><i><font style="font-size: 1.2em; color: #ffffab;">{akk_row["Term1"]}</font></i></b></font>', unsafe_allow_html=True)
 					with c2:
-						st.write(f'<b><font style="font-size: 1.1em;">{akk_row["Meaning1"]}</font></b>', unsafe_allow_html=True)
-					with c3:
 						st.write(f'<b><font style="font-size: 1.1em;">{akk_row["Written forms1"]}</font></b>', unsafe_allow_html=True)
+					with c3:
+						st.write(f'<b><font style="font-size: 1.1em;">{akk_row["Meaning1"]}</font></b>', unsafe_allow_html=True)
 					if iA != foundAkk.index[-1]:
 						st.markdown("<hr style='margin: 0.2em 0; border: none; border-top: 1px solid #444;'>", unsafe_allow_html=True)
 		else:

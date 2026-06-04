@@ -619,7 +619,7 @@ st.divider()
 ######################################## SOURCES AND REFERENCES ########################################
 st.write('<b><font style="font-size: 29px">Sources and references', unsafe_allow_html=True)
 
-with st.expander('Show/Hide', expanded=False):
+with st.expander('', expanded=False):
 	#st.markdown('<b><font style="font-size: 1.3em;">Sources:</font></b>', unsafe_allow_html=True)
 	st.markdown('**Fonts**', unsafe_allow_html=True)
 	st.markdown(

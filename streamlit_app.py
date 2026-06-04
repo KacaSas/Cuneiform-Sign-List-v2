@@ -559,11 +559,12 @@ with st.container(border=True):
 
 				searchSignProto = searchSignWithoutRegExp
 
-				replacementsProto = {'₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9', '₀': '0', 'Ḫ': 'H', 'ḫ': 'h'}
+				replacementsProto = {'Ḫ': 'H', 'ḫ': 'h'}
 
 				selectedSign = str(row['Name'])
 				for x,y in replacementsProto.items():
 					selectedSign = selectedSign.replace(x, y)
+
 				foundProtoCunDataSignName = protoCunData.loc[protoCunData['Name2'].str.contains('^' + selectedSign + '|\|' + selectedSign, case=False, regex=True)]  # by selected sign
 
 				for x,y in replacementsProto.items():

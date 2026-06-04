@@ -637,9 +637,9 @@ with st.expander('Show/Hide', expanded=False):
 		'– *Esagil.ttf* (by S. Vanséveren). https://www.hethport.uni-wuerzburg.de/cuneifont/.', unsafe_allow_html=True)
 	st.markdown('**Glossaries and dictionaries**', unsafe_allow_html=True)
 	st.markdown('– Sumerian: <b><i>gloss-sux.json</i></b> (part of <b><i>epsd2.zip</i></b>). https://oracc.museum.upenn.edu/epsd2/JSON/index.html.<br>'
-		'&ensp; &ensp; ‣ the glossary of *The Pennsylvania Sumerian Dictionary Project 2* (ePSD2). Philadelphia: University of Pennsylvania Museum of Anthropology and Archaeology. http://psd.museum.upenn.edu/nepsd-frame.html).<br>'
+		'&ensp; &ensp; ‣ the glossary of *The Pennsylvania Sumerian Dictionary Project 2* (ePSD2). Philadelphia: University of Pennsylvania Museum of Anthropology and Archaeology. http://psd.museum.upenn.edu/nepsd-frame.html.<br>'
 		'– Akkadian: <b><i>gloss-akk.json</i></b> (part of <b><i>tsae.zip</i></b>). https://oracc.museum.upenn.edu/json/tsae.zip.<br>'
-		'&ensp; &ensp; ‣ the glossary of the *Textual Sources of the Assyrian Empire* (TSAE). Philadelphia: The Open Richly Annotated Cuneiform Corpus. https://oracc.museum.upenn.edu/tsae/).', unsafe_allow_html=True)
+		'&ensp; &ensp; ‣ the glossary of the *Textual Sources of the Assyrian Empire* (TSAE). Philadelphia: The Open Richly Annotated Cuneiform Corpus. https://oracc.museum.upenn.edu/tsae/.', unsafe_allow_html=True)
 	st.markdown('**Sign lists**', unsafe_allow_html=True)
 	st.markdown(
 		'– Borger, R. (2004): *Mesopotamisches Zeichenlexikon* (AOAT 305). Münster: Ugarit-Verlag.<br>'

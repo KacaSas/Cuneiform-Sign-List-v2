@@ -1,4 +1,4 @@
-# Cuneify signs search
+# Cuneiform signs search
 This app allows searching cuneiform signs by their name or value, number in notable sign lists, and the Unicode codepoint, browsing their details, and finding their meaning through the Sumerian and Akkadian glossaries.
 
 ## Deployment

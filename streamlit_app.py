@@ -167,7 +167,7 @@ function(params) {
 	} else {
 		return {
 			'color': 'white',
-			'backgroundColor': '#5B0808',
+			'backgroundColor': '#262730',
 			'font-size':'15px',
 		}
 	}

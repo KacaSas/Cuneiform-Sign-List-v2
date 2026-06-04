@@ -80,6 +80,7 @@ if searchSign != '':
 	searchSign = searchSign.replace('+', '\\+')
 	if onlyWholeWordSearch:
 		searchSign = r'\b' + searchSign + r'\b'
+	st.write(searchSign)
 	foundSign1 = data.loc[data['Name'].str.contains(searchSign, case=False, regex=True)]
 	foundSign2 = data.loc[data['Values'].str.contains(searchSign, case=False, regex=True)]
 	foundSign3 = data.loc[data['Sign'].str.contains(searchSign, case=False, regex=True)]

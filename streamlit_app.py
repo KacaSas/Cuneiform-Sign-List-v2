@@ -70,22 +70,22 @@ def customAlphabetSort(sortedDF, sortedColumn):
 	return sortedDF
 
 st.write('<b><font style="font-size: 36px">Cuneiform signs search</font></b><br>(case insensitive, regular expressions allowed)', unsafe_allow_html=True)
-st.write('<font style="font-size: 1.1em; color: #2e9aff">Cuneiform fonts used in this app are available thanks to the efforts of S. Vanséveren, S. Tinney, C. R. Ziegeler, R. Leroy, and others. Individual cuneiform signs are mapped according to my <a href="http://home.zcu.cz/~ksaskova/Sign_List.html" target="_blank"><i>Cuneiform Sign List</i></a>; the mapping of Proto-Cuneiform signs follows the <a href="https://oracc.museum.upenn.edu/pcsl/" target="_blank"><i>Proto-Cuneiform Sign List</i></a>. Sumerian and Akkadian glossaries are taken from <a href="https://oracc.museum.upenn.edu/epsd2/" target="_blank"><i>ePSD2: The Pennsylvania Sumerian Dictionary Project</i></a> and <a href="https://oracc.museum.upenn.edu/tsae/" target="_blank"><i>TSAE: Textual Sources of the Assyrian Empire</i></a>. For details, see <i>Sources and references</i> below.</font>', unsafe_allow_html=True)
+st.write('<font style="font-size: 1.1em; color: #2e9aff">Cuneiform fonts used in this app are available thanks to the efforts of S. Vanséveren, S. Tinney, C. R. Ziegeler, R. Leroy, and others. Individual cuneiform signs are mapped according to my <a href="http://home.zcu.cz/~ksaskova/Sign_List.html" target="_blank"><i>Cuneiform Sign List</i></a>; the mapping of Proto-Cuneiform signs follows the <a href="https://oracc.museum.upenn.edu/pcsl/" target="_blank"><i>Proto-Cuneiform Sign List</i></a>. Sumerian and Akkadian glossaries are taken from <a href="https://oracc.museum.upenn.edu/epsd2/" target="_blank"><i>ePSD2: The Pennsylvania Sumerian Dictionary Project</i></a> and <a href="https://oracc.museum.upenn.edu/tsae/" target="_blank"><i>TSAE: Textual Sources of the Assyrian Empire</i></a>. For details, see <i>Sources and references</i> below.</font><br><br>', unsafe_allow_html=True)
 
-st.divider()
+#st.divider()
 
 ######################################## SIGN SEARCH ########################################
 colu1, colu2, colu3, colu4, colu5 = st.columns([1, 2, 1, 1, 1])
 with colu1:
-	searchShape = st.selectbox('Initial wedge shape:', ('', '𒀸 AŠ', '𒋰 TAB', '𒀼 EŠ16', '𒀹 GE23', '𒌋 U', '𒁹 DIŠ'), key='searchShape', label_visibility='visible')
+	searchShape = st.selectbox('Initial wedge shape:', ('𒀸 AŠ', '𒋰 TAB', '𒀼 EŠ16', '𒀹 GE23', '𒌋 U', '𒁹 DIŠ'), index=None, placeholder='Initial wedge shape', key='searchShape', label_visibility='collapsed')
 with colu2:
-	searchSign = st.text_input('Name/Value:', key='searchSign', label_visibility='visible')
+	searchSign = st.text_input('Name/Value:', placeholder='Name/Value', key='searchSign', label_visibility='collapsed')
 with colu3:
-	searchMesZL = st.text_input('MesZL number:', key='searchMesZL', label_visibility='visible')
+	searchMesZL = st.text_input('MesZL number:', placeholder='MesZL number', key='searchMesZL', label_visibility='collapsed')
 with colu4:
-	searchABZ = st.text_input('ABZ/Labat number:', key='searchABZ', label_visibility='visible')
+	searchABZ = st.text_input('ABZ/Labat number:', placeholder='ABZ/Labat number', key='searchABZ', label_visibility='collapsed')
 with colu5:
-	searchCodepoint = st.text_input('Unicode codepoint:', key='searchCodepoint', label_visibility='visible')
+	searchCodepoint = st.text_input('Unicode codepoint:', placeholder='Unicode codepoint', key='searchCodepoint', label_visibility='collapsed')
 	
 co1, co2 = st.columns([5.015, 0.985])
 with co1:
@@ -258,13 +258,13 @@ def sumerianGlossary():
 	colum1, colum2, colum3, colum4 = st.columns([7, 7, 4, 6], gap='small')
 
 	with colum1:
-		meanSumerian = st.text_input('Sumerian', key='meanSumerian')
+		meanSumerian = st.text_input('Sumerian', placeholder='Sumerian', key='meanSumerian', label_visibility='collapsed')
 	with colum2:
-		meanBaseForm = st.text_input('Signs / Written form', key='meanBaseForm')
+		meanBaseForm = st.text_input('Signs / Written form', placeholder='Signs / Written form', key='meanBaseForm', label_visibility='collapsed')
 	with colum3:
-		meanAkkadian = st.text_input('Akkadian', key='meanAkkadian')
+		meanAkkadian = st.text_input('Akkadian', placeholder='Akkadian', key='meanAkkadian', label_visibility='collapsed')
 	with colum4:
-		meanEnglish = st.text_input('English', key='meanEnglish')
+		meanEnglish = st.text_input('English', placeholder='English', key='meanEnglish', label_visibility='collapsed')
 
 	columa1, columa2, columa3, columa4 = st.columns([5, 12.9, 0.1, 6], gap='small')
 	with columa1:
@@ -350,11 +350,11 @@ def akkadianGlossary():
 	st.write('<b><font style="font-size: 1.7em; line-height: 2.9em;">Akkadian glossary</font> <font style="font-size: 1.3em; color: #969799;">(from TSAE)</b></font>', unsafe_allow_html=True)
 	column1, column2, column3 = st.columns([5, 5, 5], gap='small')
 	with column1:
-		akkAkkadian = st.text_input('Akkadian', key='akkAkkadian')
+		akkAkkadian = st.text_input('Akkadian', placeholder='Akkadian', key='akkAkkadian', label_visibility='collapsed')
 	with column2:
-		akkWrittenForm = st.text_input('Signs / Written form', key='akkWrittenForm')
+		akkWrittenForm = st.text_input('Signs / Written form', placeholder='Signs / Written form', key='akkWrittenForm', label_visibility='collapsed')
 	with column3:
-		akkEnglish = st.text_input('English', key='akkEnglish')
+		akkEnglish = st.text_input('English', placeholder='English', key='akkEnglish', label_visibility='collapsed')
 
 	columa1, columa2, columa3 = st.columns([2.7, 7.3, 5], gap='small')
 	with columa1:

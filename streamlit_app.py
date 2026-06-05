@@ -101,7 +101,7 @@ if searchSign != '':
 	for old, new in replacementsSearchSign.items():
 		searchSign = searchSign.replace(old, new)
 	searchSign = searchSign.replace('+', '\\+')
-	searchSignWithoutRegExp = searchSign
+	searchSignNoRE = searchSign
 	if onlyWholeWordSearch:
 		searchSign = r'(?<!\w)' + searchSign + r'(?!\w)'
 
@@ -590,7 +590,7 @@ with st.expander(label='', expanded=True):
 				foundProtoCunDataSignName = protoCunData.loc[protoCunData['Name2'].str.contains('^' + selectedSign + '|\|' + selectedSign, case=False, regex=True)]  # by selected sign
 
 				for x,y in replacementsProto.items():
-					searchSignProto = searchSignWithoutRegExp.replace(x, y)
+					searchSignProto = searchSignNoRE.replace(x, y)
 				foundProtoCunDataSearchTerm = protoCunData.loc[protoCunData['Name1'].str.contains('^' + searchSignProto + '|\|' + searchSignProto, case=False, regex=True)]  # by search string
 
 				clu1, clu2 = st.columns([19, 15], gap='small')

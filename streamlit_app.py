@@ -600,7 +600,7 @@ with st.expander(label='', expanded=True):
 				if len(foundProtoCunDataSignName) != 0:
 					n = 0
 					with clu1:
-						st.write('<br><b><i><font style="font-size: 1.2em">By selected sign name:</i> <font style="color: #ffffab;">', str(row['Name']), '</font></b>', unsafe_allow_html=True)
+						st.write('<b><i><font style="font-size: 1.2em; line-height: 2.5em;">By selected sign name:</i> <font style="color: #ffffab;">', str(row['Name']), '</font></b>', unsafe_allow_html=True)
 					for entry in range(len(foundProtoCunDataSignName)):
 						with cl1:
 							st.write('<b><font style="font-family: PCSL; font-size: 3.5em; color: #ffffab;">', foundProtoCunDataSignName['Sign'].iloc[n], '</font></b>', unsafe_allow_html=True)
@@ -611,7 +611,7 @@ with st.expander(label='', expanded=True):
 				if len(foundProtoCunDataSearchTerm) != 0 and str(searchSign) != '':
 					m = 0
 					with clu2:
-						st.write('<br><b><i><font style="font-size: 1.2em">By search string:</i> <font style="color: #ffffab;">', searchSignOrigin, '</font></b>', unsafe_allow_html=True)
+						st.write('<b><i><font style="font-size: 1.2em; line-height: 2.5em">By search string:</i> <font style="color: #ffffab;">', searchSignOrigin, '</font></b>', unsafe_allow_html=True)
 					for entry in range(len(foundProtoCunDataSearchTerm)):
 						with cl4:
 							st.write('<b><font style="font-family: PCSL; font-size: 3.5em; color: #ffffab;">', foundProtoCunDataSearchTerm['Sign'].iloc[m], '</font></b>', unsafe_allow_html=True)

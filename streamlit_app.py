@@ -589,16 +589,14 @@ with st.expander(label='', expanded=True):
 
 				selectedSign = str(row['Name'])
 
-				regString = '|\|'
-
 				for x,y in replacementsProto.items():
 					selectedSign = selectedSign.replace(x, y)
 
-				foundProtoCunDataSignName = protoCunData.loc[protoCunData['Name2'].str.contains('^' + selectedSign + '|\|' + selectedSign, case=False, regex=True)]  # by selected sign
+				foundProtoCunDataSignName = protoCunData.loc[protoCunData['Name2'].str.contains(r'^' + selectedSign + r'|\|' + selectedSign, case=False, regex=True)]  # by selected sign
 
 				for x,y in replacementsProto.items():
 					searchSignProto = searchSignProto.replace(x, y)
-				foundProtoCunDataSearchTerm = protoCunData.loc[protoCunData['Name1'].str.contains('^' + searchSignProto + '|\|' + searchSignProto, case=False, regex=True)]  # by search string
+				foundProtoCunDataSearchTerm = protoCunData.loc[protoCunData['Name1'].str.contains(r'^' + searchSignProto + r'|\|' + searchSignProto, case=False, regex=True)]  # by search string
 
 				clu1, clu2 = st.columns([19, 15], gap='small')
 				cl1, cl2, cl3, cl4, cl5 = st.columns([5, 10, 4, 5, 10], gap='small')

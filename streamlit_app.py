@@ -589,6 +589,8 @@ with st.expander(label='', expanded=True):
 
 				selectedSign = str(row['Name'])
 
+				regString = '|\|'
+
 				for x,y in replacementsProto.items():
 					selectedSign = selectedSign.replace(x, y)
 

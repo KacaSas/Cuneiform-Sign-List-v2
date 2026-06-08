@@ -598,8 +598,8 @@ with st.expander(label='', expanded=True):
 					searchSignProto = searchSignProto.replace(x, y)
 				foundProtoCunDataSearchTerm = protoCunData.loc[protoCunData['Name1'].str.contains(r'^' + searchSignProto + r'|\|' + searchSignProto, case=False, regex=True)]  # by search string
 
-				clu1, clu2 = st.columns([19, 15], gap='small')
-				cl1, cl2, cl3, cl4, cl5 = st.columns([5, 10, 4, 5, 10], gap='small')
+				clu1, clu2 = st.columns([15.5, 14.5], gap='small')
+				cl1, cl2, cl3, cl4, cl5 = st.columns([4.5, 10, 1, 4.5, 10], gap='small')
 
 				if len(foundProtoCunDataSignName) != 0:
 					n = 0
@@ -609,7 +609,7 @@ with st.expander(label='', expanded=True):
 						with cl1:
 							st.write('<b><font style="font-family: PCSL; font-size: 3.5em; color: #ffffab;">', foundProtoCunDataSignName['Sign'].iloc[n], '</font></b>', unsafe_allow_html=True)
 						with cl2:
-							st.write('<b><font style="font-size: 1.1em; line-height: 5.1em;">', foundProtoCunDataSignName['Name'].iloc[n], ' </font><font style="font-size: 1.1em; line-height: 5.1em; color: #969799;"> // code: ', foundProtoCunDataSignName['Code'].iloc[n], '</font> </b>', unsafe_allow_html=True)
+							st.write('<b><font style="font-size: 1.1em; line-height: 2.19em;">', foundProtoCunDataSignName['Name'].iloc[n], '<br></font><font style="font-size: 0.75em; color: #969799;"> // code: ', foundProtoCunDataSignName['Code'].iloc[n], '</font> </b><br><br>', unsafe_allow_html=True)
 						n = n+1
 
 				if len(foundProtoCunDataSearchTerm) != 0 and str(searchSign) != '':
@@ -620,7 +620,7 @@ with st.expander(label='', expanded=True):
 						with cl4:
 							st.write('<b><font style="font-family: PCSL; font-size: 3.5em; color: #ffffab;">', foundProtoCunDataSearchTerm['Sign'].iloc[m], '</font></b>', unsafe_allow_html=True)
 						with cl5:
-							st.write('<b><font style="font-size: 1.1em; line-height: 5.1em;">', foundProtoCunDataSearchTerm['Name'].iloc[m], '</font><font style="font-size: 1.1em; color: #969799;"> // code ', foundProtoCunDataSearchTerm['Code'].iloc[m], '</font></b>', unsafe_allow_html=True)
+							st.write('<b><font style="font-size: 1.1em; line-height: 2.19em;">', foundProtoCunDataSearchTerm['Name'].iloc[m], '<br></font><font style="font-size: 0.75em; color: #969799;"> // code ', foundProtoCunDataSearchTerm['Code'].iloc[m], '</font></b><br><br>', unsafe_allow_html=True)
 						m = m+1
 
 				if len(foundProtoCunDataSearchTerm) == 0 and len(foundProtoCunDataSignName) == 0:					

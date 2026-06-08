@@ -8,10 +8,6 @@ import base64  # load cuneiform fonts
 import unicodedata  # custom alphabetical sort
 import warnings
 
-#from PIL import Image, ImageOps
-#import json
-#import ijson
-
 st.set_page_config(page_title='Cuneiform sign list 2', page_icon='resources/icon/icon.png', layout='wide')  # change favicon and page title
 
 # load cuneiform fonts
@@ -255,7 +251,7 @@ def clearAkkadianForm():
 		st.session_state[Ak] = ''
 
 def sumerianGlossary():
-	st.write('<b><font style="font-size: 1.7em; line-height: 2.9em;">Sumerian glossary</font> <font style="font-size: 1.3em; color: #969799;">(from ePSD2)</b></font>', unsafe_allow_html=True)
+	st.write('<b><font style="font-size: 1.75em; line-height: 2.9em;">Sumerian glossary</font></b> <font style="color: #969799;">(from ePSD2)</font>', unsafe_allow_html=True)
 	colum1, colum2, colum3, colum4 = st.columns([7, 7, 4, 6], gap='small')
 
 	with colum1:
@@ -348,7 +344,7 @@ def sumerianGlossary():
 	st.write('<br><font style="color: #969799;">Source file <b><i>gloss-sux.json</i></b> (part of <b><i>epsd2.zip</i></b>). <a href="https://oracc.museum.upenn.edu/epsd2/" target="_blank">ePSD2: The Pennsylvania Sumerian Dictionary Project</a>. Available at https://oracc.museum.upenn.edu/epsd2/JSON/index.html.</font>', unsafe_allow_html=True)
 
 def akkadianGlossary():
-	st.write('<b><font style="font-size: 1.7em; line-height: 2.9em;">Akkadian glossary</font> <font style="font-size: 1.3em; color: #969799;">(from TSAE)</b></font>', unsafe_allow_html=True)
+	st.write('<b><font style="font-size: 1.75em; line-height: 2.9em;">Akkadian glossary</font></b> <font style="color: #969799;">(from TSAE)</font>', unsafe_allow_html=True)
 	column1, column2, column3 = st.columns([5, 5, 5], gap='small')
 	with column1:
 		akkAkkadian = st.text_input('Akkadian', placeholder='Akkadian', key='akkAkkadian', label_visibility='collapsed')
@@ -576,7 +572,7 @@ with st.expander(label='', expanded=True):
 						st.markdown('<b>white</b> – values of MesZL<br><b><font color="#c5000b">dark-red</font></b> – values of Labat<br><b><font color="#579d1c">green</font></b> – values of ABZ<br><b><font color="#666666">gray</font></b> – commentaries', unsafe_allow_html=True)
 
 			with c2:
-				st.subheader('Proto-cuneiform')
+				st.write('<font style="font-size: 1.75em; line-height: 1.75em;"><b>Proto-cuneiform</b></font><font style="color: #969799;"> (font <i>PCSL.ttf</i>)</font>', unsafe_allow_html=True)
 
 				protoCunData = pd.read_csv('resources/signList/Proto-Cuneiform.csv', keep_default_na=False, na_values=[])
 

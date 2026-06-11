@@ -85,7 +85,7 @@ with colu5:
 	
 co1, co2 = st.columns([5.015, 0.985])
 with co1:
-	onlyWholeWordSearch = st.checkbox('Search whole string only (name/value)', key='onlyWholeWordSearch', value=False)
+	onlyWholeWordSearch = st.checkbox('Apply whole-string matching to Name/Value field', help="This setting applies only to the Name/Value search. When checked, it searches for the input only as a distinct string component (e.g., searching for 'AN' matches 'AN' and 'AN.NA', but not 'ALAN' or 'MAN').", key='onlyWholeWordSearch', value=False)
 with co2:
 	clearSignListForm = st.button('Clear form', key='clearSignListForm', on_click=clearSignListForm, use_container_width=True)  # clear form
 

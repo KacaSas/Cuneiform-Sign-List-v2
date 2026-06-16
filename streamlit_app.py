@@ -93,7 +93,7 @@ data = pd.read_csv('resources/signList/SignList.csv', keep_default_na=False, na_
 
 if searchSign != '':
 	searchSignOrigin = searchSign  # keep original search term
-	replacementsSearchSign = {'Sh': 'Š', 'sh': 'š', 'kh': 'ḫ', 'H': 'Ḫ', 'h': 'ḫ', r',s': r'\,s', r'\,s': r'ṣ', r',S': r'\,S', r'\,S': r'Ṣ', r',t': r'\,t', r'\,t': r'ṭ', r',T': r'\,T', r'\,T': r'Ṭ', r'.': r'\.'}
+	replacementsSearchSign = {'Sh': 'Š', 'sh': 'š', 'kh': 'ḫ', 'SH': 'Š', 'KH': 'Ḫ', 'H': 'Ḫ', 'h': 'ḫ', r',s': r'\,s', r'\,s': r'ṣ', r',S': r'\,S', r'\,S': r'Ṣ', r',t': r'\,t', r'\,t': r'ṭ', r',T': r'\,T', r'\,T': r'Ṭ', r'.': r'\.'}
 	for old, new in replacementsSearchSign.items():
 		searchSign = searchSign.replace(old, new)
 	searchSign = searchSign.replace('+', '\\+')
@@ -582,6 +582,7 @@ with st.expander(label='', expanded=True):
 					searchSignProto = ''
 
 				replacementsProto = {'Ḫ': 'H', 'ḫ': 'h'}
+				replacementsProto1 = {'Ḫ': 'H', 'ḫ': 'h', '₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9', '₀': '0'}
 
 				selectedSign = str(row['Name'])
 
@@ -590,7 +591,7 @@ with st.expander(label='', expanded=True):
 
 				foundProtoCunDataSignName = protoCunData.loc[protoCunData['Name2'].str.contains(r'^' + selectedSign + r'|\|' + selectedSign, case=False, regex=True)]  # by selected sign
 
-				for x,y in replacementsProto.items():
+				for x,y in replacementsProto1.items():
 					searchSignProto = searchSignProto.replace(x, y)
 				foundProtoCunDataSearchTerm = protoCunData.loc[protoCunData['Name1'].str.contains(r'^' + searchSignProto + r'|\|' + searchSignProto, case=False, regex=True)]  # by search string
 

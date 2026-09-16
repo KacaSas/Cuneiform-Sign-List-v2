@@ -454,6 +454,8 @@ with st.expander(label='', expanded=True):
 					st.subheader('Cuneiform')
 					htmlCode = f"""
 					<style>
+						{fonts_css}
+						
 						@media screen and (-webkit-min-device-pixel-ratio:0) {{
 							::-webkit-scrollbar {{ width:6px; height:6px; }}
 							::-webkit-scrollbar-thumb {{ background-color: rgba(180,180,180,0.4); border-radius:3px; }}

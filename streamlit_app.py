@@ -465,7 +465,7 @@ with st.expander(label='', expanded=True):
 							width: 100%;
 							color: #ffffff;
 							font-size: 0.95em;
-							font-family: "Source Sans Pro", sans-serif;
+							font-family: 'Source Sans Pro', sans-serif;
 							border-collapse: collapse;
 							line-height: 1.75em;
 						}}
@@ -549,19 +549,41 @@ with st.expander(label='', expanded=True):
 						return width1 !== width2;
 					}}
 
-					// turn off fof Assurbanipal.ttf in Firefox (errors in the font, problems with thr visibility)
+					// turn off fof Assurbanipal.ttf in Firefox (errors in the font, problems with the visibility)
 					const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
-					for (const el of document.querySelectorAll('.cunei')) {{
-						const char = el.textContent.trim();
-						const font = window.getComputedStyle(el).fontFamily.replace(/["']/g, '');
-						if (isFirefox && font === 'Assurbanipal') {{
-							continue;
+					document.fonts.ready.then(() => {{
+						for (const el of document.querySelectorAll('.cunei')) {{
+							const char = el.textContent.trim();
+							const font = window.getComputedStyle(el).fontFamily.replace(/["']/g, '');
+							if (isFirefox && font === 'Assurbanipal') {{
+								continue;
+							}}
+							if (!supportsGlyph(font, char)) {{
+								el.textContent = '';
+							}}
 						}}
-						if (!supportsGlyph(font, char)) {{
-							el.textContent = '';
+					}});
+
+					function resizeIframe() {{
+						try {{
+							const newHeight = document.body.offsetHeight + 20;
+							const iframes = window.parent.document.querySelectorAll('iframe');
+							for (const iframe of iframes) {{
+								if (iframe.contentWindow === window) {{
+									iframe.style.height = newHeight + 'px';
+									break;
+								}}
+							}}
+						}} catch (e) {{
+							console.log('Autoresize failed due to cross-origin restriction:', e);
 						}}
 					}}
+
+
+					window.addEventListener('load', resizeIframe);
+					setTimeout(resizeIframe, 150);
+					setTimeout(resizeIframe, 500);
 					</script>
 					"""
 					st.iframe(htmlCode, height="content")

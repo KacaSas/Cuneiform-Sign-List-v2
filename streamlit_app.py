@@ -454,8 +454,12 @@ with st.expander(label='', expanded=True):
 					st.subheader('Cuneiform')
 					htmlCode = f"""
 					<style>
-						{fonts_css}
 						
+						html, body {{
+							background-color: transparent !important;
+							color: #ffffff;
+						}}
+
 						@media screen and (-webkit-min-device-pixel-ratio:0) {{
 							::-webkit-scrollbar {{ width:6px; height:6px; }}
 							::-webkit-scrollbar-thumb {{ background-color: rgba(180,180,180,0.4); border-radius:3px; }}
@@ -538,7 +542,26 @@ with st.expander(label='', expanded=True):
 						<tr><td><b>Unicode codepoint and name:</b></td><td>{row['Codepoint']}</td></tr>
 					</table>
 
-					<script>  // disable fallback glyphs and show empty space instead
+					<script>
+					// inherit font styles from parent window if iframe does not have them loaded
+					function syncFontsFromParent() {{
+						try {{
+							const parentStyles = window.parent.document.querySelectorAll('style');
+							parentStyles.forEach(style => {{
+								if (style.textContent.includes('@font-face')) {{
+									const newStyle = document.createElement('style');
+									newStyle.textContent = style.textContent;
+									document.head.appendChild(newStyle);
+								}}
+							}});
+						}} catch (e) {{
+							console.log('Parent font sync restricted:', e);
+						}}
+					}}
+
+					syncFontsFromParent();
+
+					// disable fallback glyphs and show empty space instead
 					function supportsGlyph(font, char) {{
 						const canvas = document.createElement('canvas');
 						const ctx = canvas.getContext('2d');
@@ -549,7 +572,7 @@ with st.expander(label='', expanded=True):
 						return width1 !== width2;
 					}}
 
-					// turn off fof Assurbanipal.ttf in Firefox (errors in the font, problems with the visibility)
+					// turn off Assurbanipal.ttf in Firefox (errors in the font, problems with the visibility)
 					const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
 					document.fonts.ready.then(() => {{

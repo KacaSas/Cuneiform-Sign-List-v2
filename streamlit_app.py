@@ -284,7 +284,8 @@ def sumerianGlossary():
 		for x,y in replacementsSum2.items():
 			meanAkkadian = meanAkkadian.replace(x, y)
 							
-	ePSD2data = pd.read_csv('resources/dictionary/epsd2-dictionary.csv', keep_default_na=False, na_values=[])
+	ePSD2data1 = pd.read_csv('resources/dictionary/epsd2-dictionary.csv', keep_default_na=False, na_values=[])
+	ePSD2data = customAlphabetSort(ePSD2data1, 'headword1')
 
 	if meanBaseForm != '' or meanSumerian != '' or meanAkkadian != '' or meanEnglish != '':
 		foundBaseForm = simpleSearchString(meanBaseForm, ePSD2data, 'base1')

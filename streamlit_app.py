@@ -731,7 +731,7 @@ with st.expander('', expanded=False):
 		'– KUR.NU.GI4.A – Cuneiform Script Analyzer (by uyum). https://kurnugia.web.app/.<br>'
 		'– GI-DUB – Sumerian Cuneiform Input Aid (by uyum). https://qantuppi.web.app/.', unsafe_allow_html=True)
 
-######################################## FOOTER ########################################
+######################################## FOOTER #########################################
 st.write('<br><br>', unsafe_allow_html=True)
 
 footer = """<style>

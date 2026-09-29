@@ -44,7 +44,7 @@ def clearSignListForm():
 	st.session_state['searchCodepoint'] = ''
 
 def customAlphabetSort(sortedDF, sortedColumn):
-	customAlphabet = list(' .–-0₀1₁2₂3₃4₄5₅6₆7₇8₈9₉ʾ’ʿ‘`AaĀāÂâÁáÀàÄäBbCcÇçDdḌḍḎḏEeĒēÉéÊêÈèËëFfGgĞğǦǧHhḪḫḤḥIiĪīÎîÍíÌìİıÏïJjKkLlMmNnOoŌōÔôÓóÖöPpQqRrŘřSsṢṣŞşŠšTtṬṭŢţṮṯUuŪūÛûÚúÙùÜüVvWwXxYyZz!"#$%_()*+,/:;<=>?@[]^&{|}~')
+	customAlphabet = list(' .–-0₀1₁2₂3₃4₄5₅6₆7₇8₈9₉ʾ’ʿ‘`AaĀāÂâÁáÀàÄäBbCcÇçDdḌḍḎḏEeĒēÉéÊêÈèËëFfGgĞğǦǧG̃g̃ŊŋHhḪḫḤḥIiĪīÎîÍíÌìİıÏïJjKkLlMmNnOoŌōÔôÓóÖöPpQqRrŘřSsṢṣŞşŠšTtṬṭŢţṮṯUuŪūÛûÚúÙùÜüVvWwXxYyZz!"#$%_()*+,/:;<=>?@[]^&{|}~')
 	lowercaseAlphabet = [char.lower() for char in customAlphabet]
 	charOrder = {char: i for i, char in enumerate(lowercaseAlphabet)}
 	baseVowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}

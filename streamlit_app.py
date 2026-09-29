@@ -372,7 +372,8 @@ def akkadianGlossary():
 		for x,y in replacementsAkk1.items():
 			akkAkkadian = akkAkkadian.replace(x, y)
 
-	TSAEdata = pd.read_csv('resources/dictionary/TSAE.csv', keep_default_na=False, na_values=[])
+	TSAEdata1 = pd.read_csv('resources/dictionary/TSAE.csv', keep_default_na=False, na_values=[])
+	TSAEdata = customAlphabetSort(TSAEdata1, 'Term')
 
 	if akkWrittenForm != '' or akkAkkadian != '' or akkEnglish != '':
 		foundWrittenForm = simpleSearchString(akkWrittenForm, TSAEdata, 'Written forms1')

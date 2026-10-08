@@ -31,5 +31,5 @@ The cuneiform fonts used are available thanks to the efforts of S. Vanséveren, 
 ## License
 The application source code and the custom font created by KacaSas are licensed under the **[MIT License](./LICENSE)**. You are free to use, modify, and distribute them for any purpose, including academic, educational, and commercial use.
 
-The `resources/fonts/` directory contains third-party fonts distributed under their respective free, open-source, or academic licenses. For detailed copyright information, terms of use, and full credits for each third-party font, please refer directly to the [fonts/LICENSE_INFO.txt](./fonts/LICENSE_INFO.txt) file.
+The `resources/fonts/` directory contains third-party fonts distributed under their respective free, open-source, or academic licenses. For detailed copyright information, terms of use, and full credits for each third-party font, please refer directly to the [resources/fonts/LICENSE_INFO.txt](./resources/fonts/LICENSE_INFO.txt) file.
 

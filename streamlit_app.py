@@ -700,13 +700,13 @@ with st.expander('', expanded=False):
 		'– *Oracc-RSP.ttf* (by S. Tinney). https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.<br>'
 		'– *Oracc-gudea.ttf* (by S. Tinney). https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.<br>'
 		'– *CuneiformComposite.ttf* (by S. Tinney). http://oracc.museum.upenn.edu/doc/help/visitingoracc/fonts/.<br>'
-		'– *SantakkuM.ttf* (by S. Vanséveren). https://www.hethport.uni-wuerzburg.de/cuneifont/.<br>'
+		'– *SantakkuM.ttf* (by S. Vanséveren). https://hethport.net/cuneifont/.<br>'
 		'– *Old Babylonian Freie* (by C. R. Ziegeler). https://refubium.fu-berlin.de/handle/fub188/45271 and https://github.com/crzfub/OB-Freie.<br>'
-		'– *Santakku.ttf* (by S. Vanséveren). https://www.hethport.uni-wuerzburg.de/cuneifont/.<br>'
-		'– *Assurbanipal.ttf* (by S. Vanséveren). https://www.hethport.uni-wuerzburg.de/cuneifont/.<br>'
+		'– *Santakku.ttf* (by S. Vanséveren). https://hethport.net/cuneifont/.<br>'
+		'– *Assurbanipal.ttf* (by S. Vanséveren). https://hethport.net/cuneifont/.<br>'
 		'– *Nabuninuaihsus.ttf* (by R. Leroy). https://github.com/eggrobin/Nabu-ninua-ihsus, https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.<br>'
 		'– *Sinacherib.ttf* (by K. Šašková). http://home.zcu.cz/~ksaskova/.<br>'
-		'– *Esagil.ttf* (by S. Vanséveren). https://www.hethport.uni-wuerzburg.de/cuneifont/.', unsafe_allow_html=True)
+		'– *Esagil.ttf* (by S. Vanséveren). https://hethport.net/cuneifont/.', unsafe_allow_html=True)
 	st.markdown('**Glossaries and dictionaries**', unsafe_allow_html=True)
 	st.markdown('– Sumerian: <b><i>gloss-sux.json</i></b> (part of <b><i>epsd2.zip</i></b>). https://oracc.museum.upenn.edu/epsd2/JSON/index.html.<br>'
 		'&ensp; &ensp; ‣ the glossary of *The Pennsylvania Sumerian Dictionary Project 2* (ePSD2). Philadelphia: University of Pennsylvania Museum of Anthropology and Archaeology. http://psd.museum.upenn.edu/nepsd-frame.html.<br>'

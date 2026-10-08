@@ -14,7 +14,7 @@ Fonts:
 - Santakku.ttf
 - Assurbanipal.ttf
 - Esagil.ttf
-Origin: Hethitologie Portal Mainz (https://hethport.net/cuneifont/)
+Origin: Hethitologie Portal Mainz (https://hethport.net/cuneifont/
 Source URL: https://hethport.net/cuneifont/
 
 Terms of Use:

@@ -15,13 +15,13 @@ The cuneiform fonts used are available thanks to the efforts of S. Vanséveren, 
 * [*Oracc-RSP.ttf*](https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html) (by S. Tinney).
 * [*Oracc-gudea.ttf*](https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html) (by S. Tinney).
 * [*CuneiformComposite.ttf*](http://oracc.museum.upenn.edu/doc/help/visitingoracc/fonts/) (by S. Tinney).
-* [*SantakkuM.ttf*](https://www.hethport.uni-wuerzburg.de/cuneifont/) (by S. Vanséveren).
+* [*SantakkuM.ttf*](https://hethport.net/cuneifont/) (by S. Vanséveren).
 * [*Old Babylonian Freie*](https://refubium.fu-berlin.de/handle/fub188/45271) (by C. R. Ziegeler).
-* [*Santakku.ttf*](https://www.hethport.uni-wuerzburg.de/cuneifont/) (by S. Vanséveren).
-* [*Assurbanipal.ttf*](https://www.hethport.uni-wuerzburg.de/cuneifont/) (by S. Vanséveren).
+* [*Santakku.ttf*](https://hethport.net/cuneifont/) (by S. Vanséveren).
+* [*Assurbanipal.ttf*](https://hethport.net/cuneifont/) (by S. Vanséveren).
 * [*Nabuninuaihsus.ttf*](https://github.com/eggrobin/Nabu-ninua-ihsus) (by R. Leroy).
 * [*Sinacherib.ttf*](http://home.zcu.cz/~ksaskova/) (by K. Šašková).
-* [*Esagil.ttf*](https://www.hethport.uni-wuerzburg.de/cuneifont/) (by S. Vanséveren).
+* [*Esagil.ttf*](https://hethport.net/cuneifont/) (by S. Vanséveren).
 
 ### Glossaries
 * *Sumerian*: ***gloss-sux.json*** (part of [***epsd2.zip***](https://oracc.museum.upenn.edu/epsd2/JSON/index.html)). (the glossary of [The Pennsylvania Sumerian Dictionary Project 2 (ePSD2)](http://psd.museum.upenn.edu/nepsd-frame.html)).

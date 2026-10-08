@@ -1,4 +1,5 @@
-# Cuneiform signs search
+# Cuneiform Sign List v2
+![License](https://img.shields.io/github/license/KacaSas/Cuneiform-Sign-List-v2)
 ![Repository size](https://img.shields.io/github/repo-size/KacaSas/Cuneiform-Sign-List-v2)
 ![Latest commit date](https://img.shields.io/github/last-commit/KacaSas/Cuneiform-Sign-List-v2)
 
@@ -26,3 +27,9 @@ The cuneiform fonts used are available thanks to the efforts of S. Vanséveren, 
 ### Glossaries
 * *Sumerian*: ***gloss-sux.json*** (part of [***epsd2.zip***](https://oracc.museum.upenn.edu/epsd2/JSON/index.html)). (the glossary of [The Pennsylvania Sumerian Dictionary Project 2 (ePSD2)](http://psd.museum.upenn.edu/nepsd-frame.html)).
 * *Akkadian*: ***gloss-akk.json*** (part of [***tsae.zip***](https://oracc.museum.upenn.edu/json/tsae.zip)). (the glossary of the [Textual Sources of the Assyrian Empire (TSAE)](https://oracc.museum.upenn.edu/tsae/)).
+
+## License
+The application source code and the custom font created by KacaSas are licensed under the **[MIT License](./LICENSE)**. You are free to use, modify, and distribute them for any purpose, including academic, educational, and commercial use.
+
+The `fonts/` directory contains third-party fonts distributed under their respective free, open-source, or academic licenses. For detailed copyright information, terms of use, and full credits for each third-party font, please refer directly to the [fonts/LICENSE_INFO.txt](./fonts/LICENSE_INFO.txt) file.
+

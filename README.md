@@ -1,4 +1,7 @@
 # Cuneiform signs search
+![Repository size](https://img.shields.io/github/repo-size/vuejs/vue)
+![Latest commit dat](https://img.shields.io/github/last-commit/vuejs/vue)
+
 This app allows searching cuneiform signs by their name or value, number in notable sign lists, and the Unicode codepoint, browsing their details, and finding their meaning through the Sumerian and Akkadian glossaries.
 
 ## Deployment

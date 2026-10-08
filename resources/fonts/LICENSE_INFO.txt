@@ -1,0 +1,73 @@
+======================================================================
+Fonts License Information
+======================================================================
+
+This directory contains various cuneiform fonts used by 
+the Cuneiform Sign List v2 application. Each font or set of fonts is 
+governed by its respective author's license terms as detailed below.
+
+----------------------------------------------------------------------
+1. Fonts created by Sylvie Vanséveren
+----------------------------------------------------------------------
+Fonts: 
+- SantakkuM.ttf
+- Santakku.ttf
+- Assurbanipal.ttf
+- Esagil.ttf
+Origin: Hethitologie Portal Mainz (https://hethport.net/cuneifont/)
+Source URL: https://hethport.net/cuneifont/
+
+Terms of Use:
+The fonts are available free of charge. They are copyrighted and may 
+not be modified or distributed in any modified form, nor may they be 
+distributed commercially. The fonts may be used for academic and 
+research purposes. They may be used in scientific publications and 
+websites for scholarly purposes.
+
+Credits:
+Fonts created by Sylvie Vanséveren, available on the Hethitologie Portal Mainz.
+
+----------------------------------------------------------------------
+2. Open Font License (OFL) Fonts
+----------------------------------------------------------------------
+Fonts: 
+- PCSL.ttf
+   Author: A. Pandey and S. Tinney)
+   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-pc/index.html
+               https://github.com/oracc/oracc2/tree/main/msc/fonts
+- Oracc-LAK.ttf 
+   Author: S. Tinney and V. Kethana
+   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-lak/index.html
+               https://github.com/oracc/oracc2/tree/main/msc/fonts
+- Oracc-RSP.ttf
+   Author: S. Tinney
+   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-rsp/index.html
+               https://github.com/oracc/oracc2/tree/main/msc/fonts)
+- Oracc-gudea.ttf 
+   Author: S. Tinney
+   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-gudea/index.html
+               https://github.com/oracc/oracc2/tree/main/msc/fonts
+- CuneiformComposite.ttf 
+   Author: S. Tinney
+   Source URL: https://oracc.museum.upenn.edu/doc/help/visitingoracc/fonts/
+- OBFreie-Regular.ttf
+   Author: C. R. Ziegeler
+   Source URL: https://github.com/crzfub/OB-Freie
+- Nabuninuaihsus.ttf
+   Author: R. Leroy
+   Source URL: https://github.com/eggrobin/Nabu-ninua-ihsus
+               https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-nni/index.html
+
+License: SIL Open Font License (OFL), Version 1.1. 
+These fonts are free to use, modify, and distribute. 
+The original OFL terms apply.
+
+----------------------------------------------------------------------
+3. Application Custom Font (by KacaSas)
+----------------------------------------------------------------------
+Font: Sinacherib.ttf
+Author: Kateřina Šašková (KacaSas)
+License: Free for any use (including commercial). 
+Provided as-is without any warranty.
+======================================================================
+

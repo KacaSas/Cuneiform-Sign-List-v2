@@ -33,30 +33,37 @@ Fonts created by Sylvie Vanséveren, available on the Hethitologie Portal Mainz.
 Fonts: 
 - PCSL.ttf
    Author: A. Pandey and S. Tinney
-   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-pc/index.html
-               https://github.com/oracc/oracc2/tree/main/msc/fonts
+   Source URL:
+      https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-pc/index.html
+      https://github.com/oracc/oracc2/tree/main/msc/fonts
 - Oracc-LAK.ttf 
    Author: S. Tinney and V. Kethana
-   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-lak/index.html
-               https://github.com/oracc/oracc2/tree/main/msc/fonts
+   Source URL: 
+      https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-lak/index.html
+      https://github.com/oracc/oracc2/tree/main/msc/fonts
 - Oracc-RSP.ttf
    Author: S. Tinney
-   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-rsp/index.html
-               https://github.com/oracc/oracc2/tree/main/msc/fonts)
+   Source URL:
+      https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-rsp/index.html
+      https://github.com/oracc/oracc2/tree/main/msc/fonts)
 - Oracc-gudea.ttf 
    Author: S. Tinney
-   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-gudea/index.html
-               https://github.com/oracc/oracc2/tree/main/msc/fonts
+   Source URL:
+      https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-gudea/index.html
+      https://github.com/oracc/oracc2/tree/main/msc/fonts
 - CuneiformComposite.ttf 
    Author: S. Tinney
-   Source URL: https://oracc.museum.upenn.edu/doc/help/visitingoracc/fonts/
+   Source URL:
+      https://oracc.museum.upenn.edu/doc/help/visitingoracc/fonts/
 - OBFreie-Regular.ttf
    Author: C. R. Ziegeler
-   Source URL: https://github.com/crzfub/OB-Freie
+   Source URL:
+      https://github.com/crzfub/OB-Freie
 - Nabuninuaihsus.ttf
    Author: R. Leroy
-   Source URL: https://github.com/eggrobin/Nabu-ninua-ihsus
-               https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-nni/index.html
+   Source URL:
+      https://github.com/eggrobin/Nabu-ninua-ihsus
+      https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-nni/index.html
 
 License: SIL Open Font License (OFL), Version 1.1. 
 These fonts are free to use, modify, and distribute. 

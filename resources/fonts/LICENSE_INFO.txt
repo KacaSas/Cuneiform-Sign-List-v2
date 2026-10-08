@@ -14,7 +14,7 @@ Fonts:
 - Santakku.ttf
 - Assurbanipal.ttf
 - Esagil.ttf
-Origin: Hethitologie Portal Mainz (https://hethport.net/cuneifont/
+Origin: Hethitologie Portal Mainz
 Source URL: https://hethport.net/cuneifont/
 
 Terms of Use:
@@ -32,7 +32,7 @@ Fonts created by Sylvie Vanséveren, available on the Hethitologie Portal Mainz.
 ----------------------------------------------------------------------
 Fonts: 
 - PCSL.ttf
-   Author: A. Pandey and S. Tinney)
+   Author: A. Pandey and S. Tinney
    Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-pc/index.html
                https://github.com/oracc/oracc2/tree/main/msc/fonts
 - Oracc-LAK.ttf 

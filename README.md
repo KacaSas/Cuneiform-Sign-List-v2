@@ -28,6 +28,9 @@ The cuneiform fonts used are available thanks to the efforts of S. Vanséveren, 
 * *Sumerian*: ***gloss-sux.json*** (part of [***epsd2.zip***](https://oracc.museum.upenn.edu/epsd2/JSON/index.html)). (the glossary of [The Pennsylvania Sumerian Dictionary Project 2 (ePSD2)](http://psd.museum.upenn.edu/nepsd-frame.html)).
 * *Akkadian*: ***gloss-akk.json*** (part of [***tsae.zip***](https://oracc.museum.upenn.edu/json/tsae.zip)). (the glossary of the [Textual Sources of the Assyrian Empire (TSAE)](https://oracc.museum.upenn.edu/tsae/)).
 
+## Screenshot
+![Screenshot](resources/images/Screenshot-Cuneiform-Sign-List-v2.jpg)
+
 ## License
 The application source code and the custom font created by KacaSas are licensed under the **[MIT License](./LICENSE)**. You are free to use, modify, and distribute them for any purpose, including academic, educational, and commercial use.
 

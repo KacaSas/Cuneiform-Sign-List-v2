@@ -618,7 +618,11 @@ with st.expander(label='', expanded=True):
 
 					with st.container():
 						st.markdown('<b><font style="font-size: 1.3em;">Legend:</font></b>', unsafe_allow_html=True)
-						st.markdown('<b>white</b> – values of MesZL<br><b><font color="#c5000b">dark-red</font></b> – values of Labat<br><b><font color="#579d1c">green</font></b> – values of ABZ<br><b><font color="#666666">gray</font></b> – commentaries', unsafe_allow_html=True)
+						st.markdown('<b>white</b> – values of MesZL<br>'
+							'<b><font color="#c5000b">dark-red</font></b> – values of Labat<br>'
+							'<b><font color="#579d1c">green</font></b> – values of ABZ<br>'
+							'<b><font color="#9370db">purple</font></b> – values of OSL (Oracc Sign List)<br>'
+							'<b><font color="#666666">gray</font></b> – commentaries', unsafe_allow_html=True)
 
 			with c2:
 				st.write('<font style="font-size: 1.75em; line-height: 1.75em;"><b>Proto-cuneiform</b></font><font style="color: #969799;"> (font <i>PCSL.ttf</i>)</font>', unsafe_allow_html=True)
@@ -719,6 +723,7 @@ with st.expander('', expanded=False):
 		'– Labat, R. (1994): *Manuel d’épigraphie akkadienne*. Paris.<br>'
 		'– Tinney, S. et al. (2017–): *ePSD2 Sign List*. The Pennsylvania Sumerian Dictionary Project 2 (ePSD2). Philadelphia: University of Pennsylvania Museum of Anthropology and Archaeology. https://oracc.museum.upenn.edu/epsd2/signlist/.<br>'
 		'– Veldhuis, N., Tinney, S. et al. (2014–): *OSL: Oracc Sign List*. Philadelphia: The Open Richly Annotated Cuneiform Corpus. https://oracc.museum.upenn.edu/osl/.<br>'
+		'– *OSL: Oracc Sign List (OSL Signlist)*. Philadelphia: The Open Richly Annotated Cuneiform Corpus. https://oracc.museum.upenn.edu/osl/signlist/index.html.<br>'
 		'– *PCSL: Proto-Cuneiform Sign List*. Philadelphia: The Open Richly Annotated Cuneiform Corpus. https://oracc.museum.upenn.edu/pcsl/.<br>'
 		'– *eBL: Signs*. electronic Babylonian Library (eBL). München: Ludwig-Maximilians-Universität München – Bayerische Akademie der Wissenschaften. https://www.ebl.uni-muenchen.de/signs.<br>'
 		'– Šašková, K. (2021): <i>Cuneiform Sign Llist</i>. https://home.zcu.cz/~ksaskova/Sign_List.html.<br>'

@@ -5,6 +5,10 @@
 
 This app allows searching cuneiform signs by their name or value, number in notable sign lists, and the Unicode codepoint, browsing their details, and finding their meaning through the Sumerian and Akkadian glossaries.
 
+## Requirements
+* streamlit <= 1.56.0
+* streamlit-aggrid 1.0.5
+
 ## Deployment
 https://cuneiform-sign-list-v2.streamlit.app/
 
